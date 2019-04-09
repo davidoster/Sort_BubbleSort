@@ -60,7 +60,12 @@ public class Sort_BubbleSort implements SortAlgorithm {
         // String Input
         String[] strings = {"c", "a", "e", "b","d"};
         //Output => e, d, c, b, a
-        print(bubbleSort.sort(strings));
+        startTime = System.nanoTime();
+        bubbleSort.sort(strings);
+        endTime = System.nanoTime();
+        totalTime = endTime - startTime;
+        print(strings);
+        System.out.println("Secs:" + pow(totalTime,-6) + " Nano Secs: " + totalTime);
     }
     
 }
