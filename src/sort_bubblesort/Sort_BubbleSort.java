@@ -41,6 +41,22 @@ public class Sort_BubbleSort implements SortAlgorithm {
         return array;
     }
     
+    static int binarysearch(Double[] array, Double seekelement) {
+        int middleelement = array.length / 2;
+        if(Double.compare(array[middleelement], seekelement) > 0) {
+            for(int i = 0; i <= middleelement; i++) {
+                if(Double.compare(array[i], seekelement) == 0) return i;
+            }
+        }
+        else {
+            for(int i = middleelement + 1; i < array.length; i++) {
+                if(Double.compare(array[i], seekelement) == 0) return i;
+            }
+        }
+        
+        return -1;
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -56,9 +72,12 @@ public class Sort_BubbleSort implements SortAlgorithm {
 
         // Output => 231, 78, 54, 23, 12, 9, 6, 4, 1
         print(integers);
-
+//        Double d1 = new Double(1.22);
+//        Double d2 = new Double(5.47);
+//        System.out.println(Double.compare(d2,d1));
+        System.out.println("Element 54.19 is found on " + binarysearch(integers, new Double(54.19)));
         // String Input
-        String[] strings = {"c", "a", "e", "b","d"};
+        String[] strings = {"cjp", "azk", "caq", "bfn","duk"};
         //Output => e, d, c, b, a
         startTime = System.nanoTime();
         bubbleSort.sort(strings);
